@@ -1,0 +1,144 @@
+.waContainer {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 999;
+}
+
+.waTrigger {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background-color: #25d366;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.waTrigger:hover {
+  transform: scale(1.08);
+  background-color: #20ba5a;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.55);
+}
+
+.unreadDot {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  background-color: #e53e3e;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.chatPopup {
+  position: absolute;
+  bottom: 72px;
+  right: 0;
+  width: 330px;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  animation: popIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.popupHeader {
+  background: #075e54;
+  color: #ffffff;
+  padding: 16px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerTitle {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.headerSubtitle {
+  font-size: 0.75rem;
+  color: #a7f3d0;
+}
+
+.popupBody {
+  padding: 18px;
+  background: #efeae2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chatBubble {
+  background: #ffffff;
+  padding: 12px 14px;
+  border-radius: 8px 8px 8px 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  font-size: 0.88rem;
+  color: #1f2937;
+  line-height: 1.45;
+}
+
+.quickOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quickLink {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: var(--radius-sm);
+  padding: 9px 12px;
+  font-size: 0.82rem;
+  color: #1f2937;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all var(--transition-fast);
+}
+
+.quickLink:hover {
+  background: #f9fafb;
+  border-color: #25d366;
+  color: #059669;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .waContainer {
+    bottom: 20px;
+    right: 16px;
+  }
+  .waTrigger {
+    width: 52px;
+    height: 52px;
+  }
+  .chatPopup {
+    width: calc(100vw - 32px);
+    max-width: 320px;
+    right: 0;
+    bottom: 64px;
+  }
+}
+

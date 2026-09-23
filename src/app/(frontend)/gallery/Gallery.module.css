@@ -1,0 +1,335 @@
+.galleryWrapper {
+  background-color: var(--color-cream-light);
+  min-height: 100vh;
+}
+
+.heroSection {
+  background-color: var(--color-primary-dark);
+  padding: 160px 0 80px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  filter: brightness(0.65);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(28, 42, 30, 0.4) 0%, rgba(18, 20, 23, 0.95) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroSubtitle {
+  display: inline-block;
+  color: var(--color-gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  color: #ffffff;
+  margin-bottom: 16px;
+  line-height: 1.15;
+}
+
+.heroDesc {
+  color: #d1d5db;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Category Filter Bar */
+.filterBar {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(197, 165, 90, 0.2);
+  padding: 18px 0;
+  position: sticky;
+  top: 80px;
+  z-index: 10;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.filterList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.filterBtn {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  color: var(--color-primary-dark);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 0.86rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filterBtn:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold-dark, #a38136);
+}
+
+.filterBtnActive {
+  background: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: var(--color-gold);
+  box-shadow: 0 4px 12px rgba(28, 42, 30, 0.2);
+}
+
+/* Gallery Masonry Grid */
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.photoCard {
+  position: relative;
+  height: 280px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background: #121417;
+  transition: all var(--transition-base);
+}
+
+.photoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+}
+
+.photoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.photoCard:hover .photoImg {
+  transform: scale(1.08);
+}
+
+.photoOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18, 20, 23, 0.88) 0%, rgba(18, 20, 23, 0.2) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  opacity: 0.9;
+  transition: opacity var(--transition-fast);
+}
+
+.photoCategory {
+  color: var(--color-gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.photoTitle {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.photoCaption {
+  color: #d1d5db;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.zoomHint {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(18, 20, 23, 0.75);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all var(--transition-fast);
+}
+
+.photoCard:hover .zoomHint {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Lightbox Modal */
+.lightboxModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 12, 14, 0.96);
+  backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.lightboxContent {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightboxImageWrapper {
+  max-height: 75vh;
+  max-width: 100%;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(197, 165, 90, 0.3);
+}
+
+.lightboxImg {
+  max-height: 75vh;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.lightboxFooter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  color: #ffffff;
+}
+
+.lightboxTitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-gold);
+}
+
+.lightboxCaption {
+  color: #9ca3af;
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.lightboxCounter {
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.closeBtn {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  transition: color var(--transition-fast);
+}
+
+.closeBtn:hover {
+  color: var(--color-gold);
+}
+
+.navArrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(18, 20, 23, 0.75);
+  border: 1px solid rgba(197, 165, 90, 0.4);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.navArrowBtn:hover {
+  background: var(--color-gold);
+  color: #121417;
+}
+
+.prevArrow {
+  left: -64px;
+}
+
+.nextArrow {
+  right: -64px;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 130px 0 60px;
+  }
+  .filterBar {
+    top: 70px;
+  }
+  .filterBtn {
+    padding: 6px 14px;
+    font-size: 0.8rem;
+  }
+  .photoCard {
+    height: 240px;
+  }
+  .prevArrow {
+    left: 8px;
+  }
+  .nextArrow {
+    right: 8px;
+  }
+  .closeBtn {
+    top: -40px;
+  }
+}

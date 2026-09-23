@@ -1,0 +1,371 @@
+.pageWrapper {
+  background-color: var(--color-sand-light, #faf8f5);
+  min-height: 100vh;
+  padding-bottom: 96px;
+}
+
+.headerSection {
+  background-color: var(--color-primary-dark);
+  padding: 160px 0 70px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.headerBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://padjadjaransuitesresort.com/wp-content/uploads/2026/06/sunset-view.jpg.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.35);
+}
+
+.headerInner {
+  position: relative;
+  z-index: 2;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.headerSubtitle {
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #dfc888;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.headerTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.headerDesc {
+  font-size: 1.1rem;
+  color: #d1d5db;
+  line-height: 1.7;
+}
+
+/* Nav Tabs between Destinations & Itineraries */
+.mainTabNav {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: -24px auto 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.mainTabBtn {
+  background: #ffffff;
+  border: 1px solid rgba(197, 165, 90, 0.35);
+  padding: 14px 28px;
+  border-radius: 40px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-base);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mainTabBtnActive {
+  background: var(--color-primary-dark);
+  color: #ffffff;
+  border-color: var(--color-gold);
+  box-shadow: 0 12px 30px rgba(28, 42, 30, 0.3);
+}
+
+/* Category Filter Bar */
+.filterBar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+.filterBtn {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filterBtn:hover {
+  border-color: var(--color-gold);
+  color: var(--color-primary-dark);
+}
+
+.filterBtnActive {
+  background: var(--color-gold);
+  color: #121417;
+  border-color: var(--color-gold);
+  font-weight: 600;
+}
+
+/* Destinations Grid */
+.destinationsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
+  gap: 32px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(197, 165, 90, 0.25);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+  background: #1a1d21;
+}
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImg {
+  transform: scale(1.06);
+}
+
+.distanceBadge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(18, 20, 23, 0.88);
+  backdrop-filter: blur(8px);
+  color: var(--color-gold);
+  border: 1px solid rgba(197, 165, 90, 0.4);
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.categoryTag {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(28, 42, 30, 0.88);
+  color: #dfc888;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cardBody {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 6px;
+}
+
+.cardTagline {
+  color: var(--color-gold-dark);
+  font-size: 0.86rem;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.cardDesc {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.highlightsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 24px;
+  padding-top: 14px;
+  border-top: 1px solid #f0ede6;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.84rem;
+  color: #4b5563;
+}
+
+.cardFooter {
+  padding-top: 18px;
+  border-top: 1px solid #f0ede6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mapLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  font-size: 0.86rem;
+  transition: color 0.2s;
+}
+
+.mapLink:hover {
+  color: var(--color-gold-dark);
+}
+
+/* Itineraries Section */
+.itineraryCard {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(197, 165, 90, 0.25);
+  box-shadow: var(--shadow-sm);
+  padding: 36px;
+  margin-bottom: 40px;
+}
+
+.itineraryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0ede6;
+}
+
+.itineraryTitle {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--color-primary-dark);
+}
+
+.itineraryBadge {
+  background: var(--color-cream-base);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold-dark);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.dayTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 24px;
+}
+
+.dayBlock {
+  background: #faf8f5;
+  border-radius: var(--radius-sm);
+  padding: 24px;
+  border-left: 4px solid var(--color-gold);
+}
+
+.dayTitle {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 16px;
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.activityItem {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.activityTime {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-gold-dark);
+  background: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.activityContent h5 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  margin-bottom: 4px;
+}
+
+.activityContent p {
+  font-size: 0.88rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .itineraryCard {
+    padding: 24px 18px;
+  }
+  .activityItem {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .mainTabNav {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+}

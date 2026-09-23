@@ -1,0 +1,100 @@
+.diningWrapper {
+  background-color: #ffffff;
+  border-top: 1px solid #ede8df;
+  border-bottom: 1px solid #ede8df;
+}
+
+.diningGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.diningCard {
+  background: var(--color-cream-light);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(197, 165, 90, 0.2);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.diningCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold);
+}
+
+.imageBox {
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+
+.diningImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.diningCard:hover .diningImg {
+  transform: scale(1.08);
+}
+
+.diningType {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  background: rgba(18, 20, 23, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--color-gold);
+  border: 1px solid rgba(197, 165, 90, 0.4);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.diningBody {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.diningTitle {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 8px;
+}
+
+.diningHours {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--color-gold-dark);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.diningDesc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+@media (max-width: 1024px) {
+  .diningGrid {
+    grid-template-columns: 1fr;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+}

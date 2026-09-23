@@ -1,0 +1,227 @@
+.aboutWrapper {
+  background-color: var(--color-cream-light);
+  min-height: 100vh;
+}
+
+.heroSection {
+  background-color: var(--color-primary-dark);
+  padding: 160px 0 90px;
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.28;
+  filter: brightness(0.65) saturate(1.2);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(28, 42, 30, 0.4) 0%, rgba(18, 20, 23, 0.95) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.heroSubtitle {
+  display: inline-block;
+  color: var(--color-gold);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  color: #ffffff;
+  margin-bottom: 20px;
+  line-height: 1.15;
+}
+
+.heroDesc {
+  color: #d1d5db;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* Story Section */
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.storyVisual {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+  height: 480px;
+}
+
+.storyVisual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.storyVisualBadge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(18, 20, 23, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(197, 165, 90, 0.4);
+  padding: 16px 20px;
+  border-radius: var(--radius-sm);
+  color: #ffffff;
+}
+
+.storyContent h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--color-primary-dark);
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.storyContent p {
+  color: #4b5563;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 18px;
+}
+
+/* Key Stats Bar */
+.statsSection {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, #121417 100%);
+  color: #ffffff;
+  padding: 60px 0;
+  border-top: 1px solid rgba(197, 165, 90, 0.3);
+  border-bottom: 1px solid rgba(197, 165, 90, 0.3);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  text-align: center;
+}
+
+.statValue {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  color: var(--color-gold);
+  line-height: 1;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.statLabel {
+  font-size: 0.85rem;
+  color: #d1d5db;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Pillars Section */
+.pillarCard {
+  background: #ffffff;
+  padding: 36px 28px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.pillarCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+  border-color: rgba(197, 165, 90, 0.4);
+}
+
+.pillarIconWrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(197, 165, 90, 0.12);
+  color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.pillarTitle {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 10px;
+}
+
+.pillarDesc {
+  color: #6b7280;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+/* GM Quote Section */
+.gmSection {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(197, 165, 90, 0.25);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  padding: clamp(32px, 6vw, 64px);
+  margin: 60px auto 0;
+  max-width: 900px;
+  text-align: center;
+  position: relative;
+}
+
+.quoteText {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-style: italic;
+  color: var(--color-primary-dark);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.gmAuthor {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-gold-dark, #a38136);
+}
+
+.gmTitle {
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+@media (max-width: 900px) {
+  .storyGrid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .storyVisual {
+    height: 340px;
+  }
+}

@@ -1,0 +1,72 @@
+.venueCard {
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(197, 165, 90, 0.25);
+  overflow: hidden;
+  margin-bottom: 56px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.venueCardReverse {
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(197, 165, 90, 0.25);
+  overflow: hidden;
+  margin-bottom: 56px;
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.imageSide {
+  min-height: 380px;
+  position: relative;
+  overflow: hidden;
+  background: #1a1d21;
+}
+
+.infoSide {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.venueCard .imageSide {
+  order: 1;
+}
+
+.venueCard .infoSide {
+  order: 2;
+}
+
+.venueCardReverse .imageSide {
+  order: 2;
+}
+
+.venueCardReverse .infoSide {
+  order: 1;
+}
+
+@media (max-width: 992px) {
+  .venueCard,
+  .venueCardReverse {
+    grid-template-columns: 1fr;
+    margin-bottom: 40px;
+  }
+
+  .venueCard .imageSide,
+  .venueCardReverse .imageSide {
+    order: 1 !important;
+    min-height: 260px;
+    height: 260px;
+  }
+
+  .venueCard .infoSide,
+  .venueCardReverse .infoSide {
+    order: 2 !important;
+    padding: 24px 20px;
+  }
+}

@@ -1,0 +1,155 @@
+.roomsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.roomCard {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(197, 165, 90, 0.2);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.roomCard:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gold);
+}
+
+.imageWrapper {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.roomImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.roomCard:hover .roomImg {
+  transform: scale(1.06);
+}
+
+.roomBadge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(18, 20, 23, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--color-gold);
+  border: 1px solid rgba(197, 165, 90, 0.4);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+}
+
+.cardBody {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.roomTitle {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 8px;
+}
+
+.roomSpecs {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0ede6;
+}
+
+.specItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.roomDesc {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.amenitiesList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.amenityTag {
+  background: var(--color-cream-base);
+  color: var(--color-primary-dark);
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid #f0ede6;
+}
+
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.priceLabel {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+
+.priceVal {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-gold-dark);
+}
+
+.priceUnit {
+  font-size: 0.8rem;
+  font-weight: normal;
+  color: var(--color-text-muted);
+  font-family: var(--font-sans);
+}
+
+@media (max-width: 1024px) {
+  .roomsGrid {
+    grid-template-columns: 1fr;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+}

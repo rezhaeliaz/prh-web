@@ -1,0 +1,55 @@
+/* ==========================================================================
+   PADJADJARAN SUITES RESORT & CONVENTION - DESIGN TOKENS & CSS VARIABLES
+   Aesthetic: Quiet Luxury & Modern Indonesian Hospitality
+   ========================================================================== */
+
+:root {
+  /* Brand Colors */
+  --color-primary-dark: #121417;       /* Rich Obsidian Black */
+  --color-dark-surface: #1a1d21;       /* Dark Card / Section Surface */
+  --color-dark-border: #2c3138;        /* Subtle Dark Border */
+  
+  --color-gold: #c5a55a;               /* Champagne Gold */
+  --color-gold-light: #dfc888;         /* Light Gold Accent */
+  --color-gold-dark: #9a7d36;          /* Deep Muted Gold */
+  --color-gold-glow: rgba(197, 165, 90, 0.18);
+
+  --color-cream-light: #fdfbf7;        /* Soft Linen Background */
+  --color-cream-base: #f5f0e8;         /* Warm Alabaster */
+  --color-cream-dark: #e8e0d2;         /* Neutral Cream Border/Muted */
+  
+  --color-text-main: #1c1f24;          /* Main readable text */
+  --color-text-muted: #656c78;         /* Secondary / Muted body */
+  --color-text-light: #f5f0e8;         /* White/Cream text on dark */
+  --color-text-light-muted: #a0a6b2;   /* Secondary text on dark */
+
+  --color-white: #ffffff;
+  --color-success: #2e7d32;
+  --color-danger: #c62828;
+
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-accent: 'Cormorant Garamond', Garamond, serif;
+
+  /* Elevation & Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-gold: 0 8px 25px rgba(197, 165, 90, 0.25);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Container */
+  --max-width-site: 1320px;
+  --header-height: 84px;
+}

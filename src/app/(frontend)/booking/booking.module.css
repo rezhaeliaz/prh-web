@@ -1,0 +1,288 @@
+.bookingContainer {
+  background-color: var(--color-cream-light);
+  min-height: 100vh;
+  padding: 130px 0 100px;
+}
+
+.wizardHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.wizardTitle {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: var(--color-primary-dark);
+  margin-bottom: 8px;
+}
+
+.wizardSubtitle {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+/* Step Indicator Bar */
+.stepsBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+  position: relative;
+  padding: 0 20px;
+}
+
+.stepNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  flex: 1;
+}
+
+.stepCircle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #d1d5db;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  transition: all var(--transition-fast);
+}
+
+.stepCircleActive {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: #ffffff;
+  box-shadow: 0 0 0 4px var(--color-gold-glow);
+}
+
+.stepCircleCompleted {
+  background: #2e7d32;
+  border-color: #2e7d32;
+  color: #ffffff;
+}
+
+.stepLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.stepLabelActive {
+  color: var(--color-primary-dark);
+}
+
+/* Main Form Card */
+.formCard {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(197, 165, 90, 0.25);
+  box-shadow: var(--shadow-md);
+  padding: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stepHeaderTitle {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 6px;
+}
+
+.stepHeaderDesc {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  margin-bottom: 28px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0ede6;
+}
+
+/* Room Selection Radio Cards */
+.roomSelectGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.roomSelectCard {
+  border: 2px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.roomSelectCard:hover {
+  border-color: var(--color-gold-light);
+}
+
+.roomSelectCardActive {
+  border-color: var(--color-gold);
+  background: #fdfcf9;
+  box-shadow: 0 4px 16px var(--color-gold-glow);
+}
+
+.roomCardThumb {
+  width: 160px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+/* Add-ons list */
+.addonsList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.addonItem {
+  border: 1px solid #e5e7eb;
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.addonItem:hover {
+  background: #faf8f5;
+}
+
+.addonItemActive {
+  border-color: var(--color-gold);
+  background: #fdfcf9;
+}
+
+/* Guest form grid */
+.inputGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.inputField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputLabel {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+.inputControl {
+  height: 46px;
+  border: 1px solid #dcd7ce;
+  border-radius: var(--radius-sm);
+  padding: 0 14px;
+  font-size: 0.92rem;
+  background: #faf8f5;
+  width: 100%;
+}
+
+.inputControl:focus {
+  border-color: var(--color-gold);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px var(--color-gold-glow);
+}
+
+/* Summary Row */
+.summaryTable {
+  border-top: 1px solid #f0ede6;
+  border-bottom: 2px solid var(--color-gold);
+  padding: 20px 0;
+  margin-bottom: 28px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 0.95rem;
+}
+
+.summaryTotalRow {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 14px;
+  margin-top: 8px;
+  border-top: 1px dashed #d1d5db;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--color-primary-dark);
+}
+
+/* Wizard navigation footer */
+.wizardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  border-top: 1px solid #f0ede6;
+}
+
+@media (max-width: 768px) {
+  .formCard {
+    padding: 24px 18px;
+  }
+  .roomSelectCard {
+    grid-template-columns: 1fr;
+  }
+  .roomCardThumb {
+    width: 100%;
+    height: 160px;
+  }
+  .inputGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .stepsBar {
+    padding: 0 8px;
+    margin-bottom: 24px;
+  }
+  .stepCircle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+  .stepLabel {
+    font-size: 0.68rem;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .bookingContainer {
+    padding: 100px 0 60px;
+  }
+  .wizardTitle {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "name": "prh-web",
+  "version": "1.0.0",
+  "description": "Website Padjadjaran Suites Resort & Convention Hotel Bogor",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "build": "cross-env NODE_OPTIONS=\"--no-deprecation --max-old-space-size=8000\" next build",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+    "lint": "next lint",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap"
+  },
+  "dependencies": {
+    "@payloadcms/db-sqlite": "^3.89.0",
+    "@payloadcms/next": "^3.89.0",
+    "@payloadcms/richtext-lexical": "^3.89.0",
+    "@payloadcms/ui": "^3.89.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.7",
+    "framer-motion": "^12.40.0",
+    "graphql": "^16.8.1",
+    "lucide-react": "^1.16.0",
+    "next": "16.3.3",
+    "payload": "^3.89.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "sharp": "^0.33.5"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "eslint": "^9.16.0",
+    "eslint-config-next": "16.3.3",
+    "typescript": "^5.7.2"
+  }
+}

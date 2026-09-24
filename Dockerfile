@@ -27,6 +27,9 @@ COPY . .
 # Set environment variable for build time
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+ENV PAYLOAD_SECRET="build_secret_key_padjadjaran_2026"
+ENV DATABASE_URI="sqlite://build.db"
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 
 RUN \
   if [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm run build; \
@@ -46,17 +49,16 @@ ENV HOSTNAME="0.0.0.0"
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-# Copy essential build outputs
+# Copy essential build outputs for standalone mode
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/package.json ./package.json
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 # Create media directory for uploads and set permissions
-RUN mkdir -p /app/media && chown -R nextjs:nodejs /app/media
+RUN mkdir -p /app/media && chown -R nextjs:nodejs /app/media /app
 
 USER nextjs
 
 EXPOSE 3000
 
-CMD ["npm", "run", "start"]
+CMD ["node", "server.js"]

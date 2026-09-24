@@ -1,3 +1,5 @@
+export type { GalleryItem } from '@/lib/cmsData'
+
 export interface RoomItem {
   id: string
   slug: string

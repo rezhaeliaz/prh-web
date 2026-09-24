@@ -1105,7 +1105,7 @@ export interface GalleryItem {
   category: string
   imageUrl: string
   caption: string
-  description: string
+  description?: string
   isVirtualTour: boolean
   order: number
 }

@@ -11,6 +11,8 @@ interface BookingBarProps {
   locale?: Locale
   settings?: {
     whatsapp?: string
+    bookingEngineType?: string
+    thirdPartyBookingUrl?: string
   }
 }
 

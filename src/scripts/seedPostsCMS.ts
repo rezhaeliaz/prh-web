@@ -1,7 +1,7 @@
 import { getPayload } from 'payload'
 import config from '../payload.config'
 
-function markdownToLexical(markdownText: string) {
+function markdownToLexical(markdownText: string): any {
   const lines = markdownText.split('\n')
   const children: any[] = []
 
@@ -53,7 +53,7 @@ function markdownToLexical(markdownText: string) {
       children,
       direction: 'ltr',
     },
-  }
+  } as any
 }
 
 async function seedPosts() {
@@ -270,13 +270,13 @@ Hegarmanah Restaurant is designed with an open-air scenic terrace embracing the 
           excerpt: post.id.excerpt,
           readTime: post.id.readTime,
           content: markdownToLexical(post.id.content),
-          category: post.category,
+          category: post.category as any,
           featuredImage: post.featuredImage,
           imageUrl: post.imageUrl,
           publishedAt: post.publishedAt,
           author: post.author,
           _status: 'published',
-        },
+        } as any,
       })
 
       // Update EN locale
@@ -289,13 +289,13 @@ Hegarmanah Restaurant is designed with an open-air scenic terrace embracing the 
           excerpt: post.en.excerpt,
           readTime: post.en.readTime,
           content: markdownToLexical(post.en.content),
-          category: post.category,
+          category: post.category as any,
           featuredImage: post.featuredImage,
           imageUrl: post.imageUrl,
           publishedAt: post.publishedAt,
           author: post.author,
           _status: 'published',
-        },
+        } as any,
       })
       console.log(`[UPDATED POST OK] ${post.slug}`)
     } else {
@@ -307,7 +307,7 @@ Hegarmanah Restaurant is designed with an open-air scenic terrace embracing the 
         data: {
           title: post.id.title,
           slug: post.slug,
-          category: post.category,
+          category: post.category as any,
           excerpt: post.id.excerpt,
           readTime: post.id.readTime,
           content: markdownToLexical(post.id.content),
@@ -316,7 +316,7 @@ Hegarmanah Restaurant is designed with an open-air scenic terrace embracing the 
           publishedAt: post.publishedAt,
           author: post.author,
           _status: 'published',
-        },
+        } as any,
       })
 
       // Update EN locale
@@ -329,13 +329,13 @@ Hegarmanah Restaurant is designed with an open-air scenic terrace embracing the 
           excerpt: post.en.excerpt,
           readTime: post.en.readTime,
           content: markdownToLexical(post.en.content),
-          category: post.category,
+          category: post.category as any,
           featuredImage: post.featuredImage,
           imageUrl: post.imageUrl,
           publishedAt: post.publishedAt,
           author: post.author,
           _status: 'published',
-        },
+        } as any,
       })
       console.log(`[CREATED POST OK] ${post.slug} (ID: ${created.id})`)
     }

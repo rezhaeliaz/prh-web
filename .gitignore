@@ -36,9 +36,9 @@ yarn-error.log*
 *.db-wal
 *.db-shm
 
-# payload media uploads
-/media/
-/public/media/
+# payload media uploads (tracked for automated proxmox deployment)
+# /media/
+# /public/media/
 
 # typescript
 *.tsbuildinfo

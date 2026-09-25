@@ -1,0 +1,23 @@
+name: Auto Deploy to Proxmox Server
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Auto-Deploy on Proxmox LXC
+        uses: appleboy/ssh-action@v1.0.3
+        if: ${{ vars.PROXMOX_HOST != '' }}
+        with:
+          host: ${{ secrets.PROXMOX_HOST }}
+          username: ${{ secrets.PROXMOX_USER || 'root' }}
+          password: ${{ secrets.PROXMOX_PASSWORD }}
+          port: ${{ secrets.PROXMOX_PORT || 22 }}
+          script: |
+            cd ~/prh-web
+            git pull origin main
+            docker compose up -d --build

@@ -257,6 +257,57 @@ export async function GET() {
       },
     })
 
+    // 7. Update Footer Config Global (8 Tautan Lengkap)
+    const quickLinksId = [
+      { label: 'Tentang Padjadjaran Suites', href: '/about' },
+      { label: 'Jurnal & Inspirasi Wisata', href: '/blog' },
+      { label: 'Galeri Foto HD', href: '/gallery' },
+      { label: 'Penawaran & Promo Spesial', href: '/offers' },
+      { label: 'Cek Ketersediaan & Booking', href: '/booking' },
+      { label: 'Lokasi & Kontak', href: '/contact' },
+      { label: 'Aplikasi Android', href: 'https://play.google.com/store/apps/details?id=com.dip.padjadjaransuites' },
+      { label: 'Portal Admin CMS', href: '/admin' },
+    ]
+
+    const quickLinksEn = [
+      { label: 'About Our Heritage', href: '/about' },
+      { label: 'Journal & Travel Stories', href: '/blog' },
+      { label: 'Photo Gallery HD', href: '/gallery' },
+      { label: 'Exclusive Offers & Packages', href: '/offers' },
+      { label: 'Check Rates & Booking', href: '/booking' },
+      { label: 'Location & Contact', href: '/contact' },
+      { label: 'Android Mobile App', href: 'https://play.google.com/store/apps/details?id=com.dip.padjadjaransuites' },
+      { label: 'CMS Admin Portal', href: '/admin' },
+    ]
+
+    const updatedFooterId = await payload.updateGlobal({
+      slug: 'footer-config',
+      locale: 'id',
+      data: {
+        aboutText:
+          'Menghadirkan pesona resor menenangkan dengan fasilitas konvensi lengkap dan berkelas internasional di kawasan Bogor Nirwana Residence (BNR), Bogor, Jawa Barat.',
+        copyrightText: '© 2026 Padjadjaran Suites Resort & Convention Hotel Bogor. All Rights Reserved.',
+        quickLinks: quickLinksId,
+      },
+    })
+
+    if (updatedFooterId?.quickLinks) {
+      await payload.updateGlobal({
+        slug: 'footer-config',
+        locale: 'en',
+        data: {
+          aboutText:
+            'Delivering the soothing charm of a resort with comprehensive international-standard convention facilities in the prestigious Bogor Nirwana Residence (BNR) area, Bogor, West Java.',
+          copyrightText: '© 2026 Padjadjaran Suites Resort & Convention Hotel Bogor. All Rights Reserved.',
+          quickLinks: updatedFooterId.quickLinks.map((item: any, idx: number) => ({
+            id: item.id,
+            label: quickLinksEn[idx]?.label || item.label,
+            href: quickLinksEn[idx]?.href || item.href,
+          })),
+        },
+      })
+    }
+
     return NextResponse.json({
       success: true,
       message: 'Database Padjadjaran Suites berhasil disemai (seeded)!',

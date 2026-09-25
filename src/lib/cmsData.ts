@@ -60,8 +60,8 @@ export async function getSiteSettingsData(locale: 'id' | 'en' = 'id') {
           facebook: settings.socialMedia?.facebook || HOTEL_INFO.social.facebook,
           tiktok: settings.socialMedia?.tiktok || HOTEL_INFO.social.tiktok,
         },
-        logoUrl,
-        logoWhiteUrl,
+        logoUrl: logoUrl || '/media/Logo PRH.png',
+        logoWhiteUrl: logoWhiteUrl || '/media/Logo PRH.png',
         bookingEngineType: settings.bookingConfig?.engineType || 'third-party',
         thirdPartyBookingUrl:
           settings.bookingConfig?.thirdPartyUrl ||
@@ -74,8 +74,8 @@ export async function getSiteSettingsData(locale: 'id' | 'en' = 'id') {
 
   return {
     ...HOTEL_INFO,
-    logoUrl: null,
-    logoWhiteUrl: null,
+    logoUrl: '/media/Logo PRH.png',
+    logoWhiteUrl: '/media/Logo PRH.png',
     bookingEngineType: 'third-party',
     thirdPartyBookingUrl: 'https://be.dip.id/booking/cekrooms?keyid=9de3264a0298106659401228618ea286',
   }

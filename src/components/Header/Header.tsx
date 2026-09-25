@@ -41,7 +41,7 @@ export const Header: React.FC<HeaderProps> = ({ initialLogoUrl, currentLocale = 
   const [isMobileOpen, setIsMobileOpen] = useState(false)
   const [expandedMobileIndex, setExpandedMobileIndex] = useState<number | null>(null)
   const [currentLang, setCurrentLang] = useState<'id' | 'en'>(currentLocale)
-  const [logoUrl, setLogoUrl] = useState<string | null>(settings?.logoUrl || initialLogoUrl || null)
+  const [logoUrl, setLogoUrl] = useState<string | null>(settings?.logoUrl || initialLogoUrl || '/logo-padjadjaran.png')
   const [phone, setPhone] = useState(settings?.phone || '+62 251 756 9000')
   const [whatsapp, setWhatsapp] = useState(settings?.whatsapp || '+62 851 8309 3061')
   const [whatsappUrl, setWhatsappUrl] = useState(
@@ -324,6 +324,12 @@ export const Header: React.FC<HeaderProps> = ({ initialLogoUrl, currentLocale = 
                 src={logoUrl}
                 alt="Padjadjaran Suites Resort & Convention Hotel"
                 className={styles.brandLogoImg}
+                onError={(e) => {
+                  const target = e.currentTarget
+                  if (!target.src.endsWith('/logo-padjadjaran.png')) {
+                    target.src = '/logo-padjadjaran.png'
+                  }
+                }}
               />
             ) : (
               <>

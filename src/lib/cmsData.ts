@@ -60,8 +60,8 @@ export async function getSiteSettingsData(locale: 'id' | 'en' = 'id') {
           facebook: settings.socialMedia?.facebook || HOTEL_INFO.social.facebook,
           tiktok: settings.socialMedia?.tiktok || HOTEL_INFO.social.tiktok,
         },
-        logoUrl: logoUrl || '/media/Logo PRH.png',
-        logoWhiteUrl: logoWhiteUrl || '/media/Logo PRH.png',
+        logoUrl: logoUrl ? logoUrl.replace(/ /g, '%20') : '/logo-padjadjaran.png',
+        logoWhiteUrl: logoWhiteUrl ? logoWhiteUrl.replace(/ /g, '%20') : '/logo-padjadjaran.png',
         bookingEngineType: settings.bookingConfig?.engineType || 'third-party',
         thirdPartyBookingUrl:
           settings.bookingConfig?.thirdPartyUrl ||
@@ -74,8 +74,8 @@ export async function getSiteSettingsData(locale: 'id' | 'en' = 'id') {
 
   return {
     ...HOTEL_INFO,
-    logoUrl: '/media/Logo PRH.png',
-    logoWhiteUrl: '/media/Logo PRH.png',
+    logoUrl: '/logo-padjadjaran.png',
+    logoWhiteUrl: '/logo-padjadjaran.png',
     bookingEngineType: 'third-party',
     thirdPartyBookingUrl: 'https://be.dip.id/booking/cekrooms?keyid=9de3264a0298106659401228618ea286',
   }

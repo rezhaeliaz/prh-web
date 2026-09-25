@@ -130,6 +130,12 @@ export const Footer: React.FC<FooterProps> = ({ initialLogoUrl, currentLocale = 
                 src={logoUrl}
                 alt="Padjadjaran Suites Resort & Convention Hotel"
                 className={styles.footerLogoImg}
+                onError={(e) => {
+                  const target = e.currentTarget
+                  if (!target.src.endsWith('/logo-padjadjaran.png')) {
+                    target.src = '/logo-padjadjaran.png'
+                  }
+                }}
               />
             </Link>
           ) : (

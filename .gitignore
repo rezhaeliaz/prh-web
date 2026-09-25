@@ -35,6 +35,7 @@ yarn-error.log*
 *.db-journal
 *.db-wal
 *.db-shm
+!payload.db
 
 # payload media uploads (tracked for automated proxmox deployment)
 # /media/

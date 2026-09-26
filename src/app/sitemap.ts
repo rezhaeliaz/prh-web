@@ -3,8 +3,8 @@ import { ROOMS_DATA } from '@/data/hotelData'
 import { getPostsData } from '@/lib/cmsData'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const rawUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'https://padjadjaransuitesresort.com'
-  const baseUrl = rawUrl.includes('localhost') ? 'https://padjadjaransuitesresort.com' : rawUrl
+  const rawUrl = process.env.NEXT_PUBLIC_SERVER_URL || 'https://ps.padjadjaransuitesresort.com'
+  const baseUrl = rawUrl.includes('localhost') ? 'https://ps.padjadjaransuitesresort.com' : rawUrl
 
   const staticRoutes = [
     '',

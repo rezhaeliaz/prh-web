@@ -1,4 +1,5 @@
 import React from 'react'
+import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import type { Locale } from '@/lib/translations'
 import { Hero } from '@/components/Hero/Hero'
@@ -15,6 +16,32 @@ import {
   getHomePageData,
   getGalleriesData,
 } from '@/lib/cmsData'
+
+export const metadata: Metadata = {
+  title: 'Padjadjaran Suites Resort & Convention Hotel Bogor | Official Website',
+  description:
+    'Website resmi Padjadjaran Suites Resort & Convention Hotel Bogor. Resor bintang 5 dan fasilitas konvensi megah di kawasan Bogor Nirwana Residence (BNR). Pesan langsung dengan jaminan harga terbaik.',
+  alternates: {
+    canonical: 'https://padjadjaransuitesresort.com',
+  },
+  openGraph: {
+    title: 'Padjadjaran Suites Resort & Convention Hotel Bogor',
+    description:
+      'Where Luxury Meets Serene Mountain Views. Booking kamar & ballroom langsung dengan jaminan harga terbaik.',
+    url: 'https://padjadjaransuitesresort.com',
+    siteName: 'Padjadjaran Suites Resort',
+    images: [
+      {
+        url: '/api/media/file/gedung-utama-resor-padjadjaran-suites.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Padjadjaran Suites Resort & Convention Hotel Bogor',
+      },
+    ],
+    locale: 'id_ID',
+    type: 'website',
+  },
+}
 
 export default async function HomePage() {
   const cookieStore = await cookies()

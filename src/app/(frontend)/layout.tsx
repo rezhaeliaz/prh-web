@@ -27,6 +27,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SERVER_URL || 'https://padjadjaransuitesresort.com'),
   title: 'Padjadjaran Suites Resort & Convention Hotel Bogor | Official Website',
   description:
     'Website resmi Padjadjaran Suites Resort & Convention Hotel Bogor. Resor bintang 5 dan fasilitas konvensi megah di kawasan Bogor Nirwana Residence (BNR). Pesan langsung dengan jaminan harga terbaik.',
